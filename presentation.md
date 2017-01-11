@@ -119,15 +119,15 @@ h_conv = tf.nn.relu(convolution + b_conv)
 
 ## Convolution Fully Conected
 
-'''python
-W_fc = tf.Variable(tf.truncated_normal([3, 3, 1, 32], 
+```python
+W_fc = tf.Variable(tf.truncated_normal([w * h * 32, 1024], 
                                          stddev=0.1))
-b_fc = tf.Variable(tf.constant(0.1, shape=[32]))
+b_fc = tf.Variable(tf.constant(0.1, shape=[1024]))
 
 h_conv_flat = tf.reshape(h_conv, [w * h * 32])
 
 h_fc = tf.nn.relu(tf.matmul(h_conv_flat, W_fc) + b_fc1)
-'''
+```
 
 # Tricks
 
